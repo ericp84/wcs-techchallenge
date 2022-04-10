@@ -9,7 +9,7 @@ const ArgonautsList = () => {
 
     useEffect(()=> {
         const argonautsStartList = async () => {
-        const argonautsRequest = await fetch('http://192.168.1.105:3000/argonauts')
+        const argonautsRequest = await fetch('https://argonauts-techchallenge-back.herokuapp.com/argonauts')
         const argonautsResponse = await argonautsRequest.json()
         setArgonautsList(argonautsResponse.argoOnBoard)
     }
