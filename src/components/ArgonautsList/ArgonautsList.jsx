@@ -4,23 +4,25 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const ArgonautsList = () => {
-    const [ argonautsList, setArgonautsList] = useState([]);
+    const [ argonautsList, setArgonautsList ] = useState([]);
+    const [ argoListError, setArgoListError ] = useState([]);
 
     useEffect(()=> {
         const argonautsStartList = async () => {
-        const argonautsRequest = await fetch('https://argonauts-techchallenge-back.herokuapp.com/argonauts')
+        const argonautsRequest = await fetch('http://192.168.1.105:3000/argonauts')
         const argonautsResponse = await argonautsRequest.json()
         setArgonautsList(argonautsResponse.argoOnBoard)
+        setArgoListError(argonautsResponse.error)
     }
     argonautsStartList()
     }, [])
 
     let crew;
-    argonautsList.length === 0 ? crew = <h2 id="no-argo">Pas de membres dans l'équipe 😨</h2> : crew = argonautsList.map((argos, i)=> {
+    argonautsList.length > 0 ? crew = argonautsList.map((argos, i)=> {
         return (
             <div className="crew-members" key={i}><p> {argos.name} </p></div>
         )
-    })
+    }) : crew = <h2 id="no-argo">{argoListError}</h2> 
     return (
         <>
             <Header/>
