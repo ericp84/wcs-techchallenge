@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import AddInput from '../Addinput/AddInput';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import AddInput from '../Addinput/AddInput';
 
 const ArgonautsList = () => {
-
     const [ argonautsList, setArgonautsList] = useState([]);
 
     useEffect(()=> {
@@ -17,7 +16,7 @@ const ArgonautsList = () => {
     }, [])
 
     let crew;
-    argonautsList.length === 0 ? crew = <h2 className="no-argo">Pas d'argonautes sur le navire ! 😨</h2> : crew = argonautsList.map((argos, i)=> {
+    argonautsList.length === 0 ? crew = <h2 id="no-argo">Pas de membres dans l'équipe 😨</h2> : crew = argonautsList.map((argos, i)=> {
         return (
             <div className="crew-members" key={i}><p> {argos.name} </p></div>
         )
@@ -31,7 +30,7 @@ const ArgonautsList = () => {
                 <div className="crew">
                     {crew}
                 </div>
-            <Footer/>
+            <Footer/>    
         </>
     );
 };

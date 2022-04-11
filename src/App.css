@@ -46,7 +46,7 @@ h1 {
   font-size: 25px;
 }
 
-.no-argo {
+#no-argo {
   margin-top: 50px;
 }
 
@@ -62,7 +62,7 @@ h1 {
 .crew-members {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 5px;
   margin-inline: 5px;
   width: 30%;
   background-color: antiquewhite;
