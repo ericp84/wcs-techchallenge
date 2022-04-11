@@ -5,7 +5,7 @@ const AddInput = () => {
     const [name, setName] = useState('');
   
     const handleChange = async () => {
-        await fetch ('http://192.168.1.105:3000/create_argonauts', {
+        await fetch ('https://argonauts-techchallenge-back.herokuapp.com/create_argonauts', {
         method : "POST",
         headers : {'Content-Type': 'application/x-www-form-urlencoded'},
         body : `name=${name}`
