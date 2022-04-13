@@ -15,7 +15,7 @@ const ArgonautsList = () => {
         setArgoListError(argonautsResponse.error)
     }
     argonautsStartList()
-    }, [])
+    }, [argonautsList])
 
     let crew;
     argonautsList.length > 0 ? crew = argonautsList.map((argos, i)=> {
