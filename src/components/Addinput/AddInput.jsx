@@ -11,6 +11,7 @@ const AddInput = () => {
         headers : {'Content-Type': 'application/x-www-form-urlencoded'},
         body : `name=${name}`
       })
+      setName("")
     }
   
     return (
@@ -18,7 +19,7 @@ const AddInput = () => {
             <form>
                 <label htmlFor="name" className='label' >Nom de l'argonaute</label>
                 <div className="input-container">
-                    <input type="text" id="name" name="name" onChange={(e)=>setName(e.target.value)}/>
+                    <input type="text" id="name" value={name} name="name" onChange={(e)=>setName(e.target.value)}/>
                     <button id="btn" type='submit' onClick={handleChange}>Envoyer</button>
                 </div>
             </form>
