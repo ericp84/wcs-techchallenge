@@ -11,7 +11,7 @@ const AddInput = () => {
         headers : {'Content-Type': 'application/x-www-form-urlencoded'},
         body : `name=${name}`
       })
-      setName("")
+        setName("")
     }
   
     return (
